@@ -124,8 +124,8 @@ function homeTeamName() {
 
 const awayTeamName = () => gameObject().away.teamName
 
-// findPlayer helper function so we don't Don't Repeat Yourself
-// a.k.a. keeping out code "DRY"
+// findPlayer helper function so we Don't Repeat Yourself
+// a.k.a. keeping code "DRY"
 function findPlayer(name) {
     let player
     const data = gameObject()
@@ -150,11 +150,11 @@ function findPlayer(name) {
 }
 
 
-function numPointsScored(name) { //no wet code here!
+function numPointsScored(name) { // no wet code here.
     return findPlayer(name).points
 }
 
-const shoeSize = name => findPlayer(name).shoe //super DRY code!
+const shoeSize = name => findPlayer(name).shoe // super DRY code!
 
 function teamColors(name){
     const data = gameObject()
