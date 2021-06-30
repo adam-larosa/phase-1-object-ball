@@ -127,15 +127,23 @@ const awayTeamName = () => gameObject().away.teamName
 // findPlayer helper function so we Don't Repeat Yourself
 // a.k.a. keeping code "DRY"
 function findPlayer(name) {
-    let player
+
+    // O(1) refactor
     const data = gameObject()
-    if (data.home.players[name]) {
-        player = data.home.players[name]
-    }
-    if (data.away.players[name]) {
-        player = data.away.players[name]
-    }
-    return player
+    const { home, away } = data // destructuring
+    return home.players[name] ? home.players[name] :away.players[name]
+
+    // O(1) solution
+    // ---------------
+    // let player
+    // const data = gameObject()
+    // if (data.home.players[name]) {
+    //     player = data.home.players[name]
+    // }
+    // if (data.away.players[name]) {
+    //     player = data.away.players[name]
+    // }
+    // return player
 
     // O(n)^2 solution
     // -----------------
