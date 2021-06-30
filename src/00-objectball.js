@@ -173,6 +173,18 @@ function teamColors(name){
     }
 }
 
+const teamNames = () => {
+    const data = gameObject()
+    return Object.keys(data).map(t => data[t].teamName)
+}
+
+
+
+
+
+
+
+
 // otherStuff function created to show array methods used to find certain
 // team players
 
