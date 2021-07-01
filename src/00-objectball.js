@@ -242,8 +242,7 @@ const winningTeam = () => {
     return memory[teams[0]] > memory[teams[1]] ? teams[0] : teams[1]
 }
 
-const playerWithLongestName = () => {
-    const data = gameObject()
+const playerWithLongestName = (data = gameObject()) => {
     const memory = {name: ""}
     for (key in data) {
         const team = data[key]
@@ -258,7 +257,7 @@ const playerWithLongestName = () => {
 
 const doesLongNameStealATon = () => {
     const data = gameObject()
-    const longName = playerWithLongestName()
+    const longName = playerWithLongestName(data)
     const longPlayer = findPlayer(longName)
     for (key in data) {
         const team = data[key]
