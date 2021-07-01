@@ -178,7 +178,19 @@ const teamNames = () => {
     return Object.keys(data).map(t => data[t].teamName)
 }
 
-
+const playerNumbers = name => {
+    const data = gameObject()
+    const team = Object.keys(data).find(t => data[t].teamName === name)
+    const players = Object.keys(data[team].players)
+    return players.map(player => data[team].players[player].number)
+        /* ^^^ the variable declared        ^^^ the attribute of the object
+               on line 184.                     we spent all that time
+                                                building this morning, a.k.a.
+                                                that huge object at the top of
+                                                this file.
+         TWO DIFFERENT "players" VARIABLES???                                      
+                                                */
+}
 
 
 
