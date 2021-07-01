@@ -251,13 +251,31 @@ const playerWithLongestName = () => {
     return memory.name
 }
 
+const doesLongNameStealATon = () => {
+    const data = gameObject()
+    const longName = playerWithLongestName()
+    const longPlayer = findPlayer(longName)
+    for (key in data) {
+        const team = data[key]
+        for (player in team.players) {
+            const challenger = team.players[player]
+            if (longPlayer.steals < challenger.steals) {
+                return false
+            }
+        }
+    }
+    return true
+}
 
 
-// otherStuff function created to show array methods used to find certain
-// team players
+/* otherStuff function created to show array methods used to find certain
+team players
 
-// e.g. otherStuff().home.players.find(e => e.name === "Alan Anderson")
-// would return the WHOLE PLAYER OBJECT.  :)
+e.g... 
+
+    otherStuff().home.players.find(e => e.name === "Alan Anderson")
+
+would return the WHOLE PLAYER OBJECT.  :)                                     */
 function otherStuff() {
     const theObject = {
         home: {
