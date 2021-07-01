@@ -195,6 +195,21 @@ const playerNumbers = name => {
 // playerStats uses our helper function from above
 const playerStats = name => findPlayer(name)
 
+const bigShoeRebounds = () => {
+    const data = gameObject()
+    const memory = {shoe: 0}
+    for (key in data) {
+        for(player in data[key].players) {
+            const playerInfo = data[key].players[player]
+            if (playerInfo.shoe > memory.shoe) {
+                memory.shoe = playerInfo.shoe
+                memory.rebounds = playerInfo.rebounds
+            }
+        }
+    }
+    return memory.rebounds
+}
+
 
 
 
