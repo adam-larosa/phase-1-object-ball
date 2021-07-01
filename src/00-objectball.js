@@ -131,7 +131,7 @@ function findPlayer(name) {
     // O(1) refactor
     const data = gameObject()
     const { home, away } = data // destructuring
-    return home.players[name] ? home.players[name] :away.players[name]
+    return home.players[name] ? home.players[name] : away.players[name]
 
     // O(1) solution
     // ---------------
@@ -199,7 +199,7 @@ const bigShoeRebounds = () => {
     const data = gameObject()
     const memory = {shoe: 0}
     for (key in data) {
-        for(player in data[key].players) {
+        for (player in data[key].players) {
             const playerInfo = data[key].players[player]
             if (playerInfo.shoe > memory.shoe) {
                 memory.shoe = playerInfo.shoe
@@ -208,6 +208,21 @@ const bigShoeRebounds = () => {
         }
     }
     return memory.rebounds
+}
+
+const mostPointsScored = () => {
+    const data = gameObject()
+    const memory = {name: undefined, points: 0}
+    for (key in data) {
+        for (player in data[key].players) {
+            const playerInfo = data[key].players[player]
+            if (playerInfo.points > memory.points) {
+                memory.name = player
+                memory.points = playerInfo.points
+            }
+        }
+    }
+    return memory.name
 }
 
 
