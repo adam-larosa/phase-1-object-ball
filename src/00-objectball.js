@@ -226,7 +226,7 @@ const mostPointsScored = () => {
 }
 
 const winningTeam = () => {
-    const data =  gameObject()
+    const data = gameObject()
     const memory = {}
     for (key in data) {
         memory[key] = Object.keys(data[key].players).map(p => {
@@ -237,7 +237,19 @@ const winningTeam = () => {
     return memory[teams[0]] > memory[teams[1]] ? teams[0] : teams[1]
 }
 
-
+const playerWithLongestName = () => {
+    const data = gameObject()
+    const memory = {name: ""}
+    for (key in data) {
+        const team = data[key]
+        Object.keys(team.players).forEach(player => {
+            if (memory.name.length < player.length) {
+                memory.name = player
+            } 
+        })
+    }
+    return memory.name
+}
 
 
 
