@@ -131,10 +131,9 @@ const awayTeamName = () => gameObject().away.teamName
 
 // findPlayer helper function so we Don't Repeat Yourself
 // a.k.a. keeping code "DRY"
-function findPlayer(name) {
+function findPlayer(name, data = gameObject()) {
 
     // O(1) refactor
-    const data = gameObject()
     const { home, away } = data // destructuring
     return home.players[name] ? home.players[name] : away.players[name]
 
@@ -258,7 +257,7 @@ const playerWithLongestName = (data = gameObject()) => {
 const doesLongNameStealATon = () => {
     const data = gameObject()
     const longName = playerWithLongestName(data)
-    const longPlayer = findPlayer(longName)
+    const longPlayer = findPlayer(longName, data)
     for (key in data) {
         const team = data[key]
         for (player in team.players) {
