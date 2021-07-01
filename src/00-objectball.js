@@ -225,6 +225,18 @@ const mostPointsScored = () => {
     return memory.name
 }
 
+const winningTeam = () => {
+    const data =  gameObject()
+    const memory = {}
+    for (key in data) {
+        memory[key] = Object.keys(data[key].players).map(p => {
+            return data[key].players[p].points
+        }).reduce((a, n) => a + n)
+    }
+    teams = Object.keys(memory)
+    return memory[teams[0]] > memory[teams[1]] ? teams[0] : teams[1]
+}
+
 
 
 
