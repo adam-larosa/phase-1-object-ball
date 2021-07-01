@@ -192,6 +192,7 @@ const playerNumbers = name => {
                                                 */
 }
 
+// playerStats uses our helper function from above
 const playerStats = name => findPlayer(name)
 
 
