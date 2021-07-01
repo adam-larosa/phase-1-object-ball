@@ -118,8 +118,13 @@ function gameObject() {
 
 
 function homeTeamName() {
-  let object = gameObject()
-  return object['home']['teamName']
+    let object = gameObject()
+    return object['home']['teamName']
+}
+
+function homeJerseyNumbers() {
+    const team = gameObject().home.players
+    return Object.keys(team).map(player => team[player].number)
 }
 
 const awayTeamName = () => gameObject().away.teamName
