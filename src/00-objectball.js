@@ -192,6 +192,7 @@ const playerNumbers = name => {
                                                 */
 }
 
+const playerStats = name => findPlayer(name)
 
 
 
