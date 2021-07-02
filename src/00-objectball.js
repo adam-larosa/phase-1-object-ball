@@ -4,16 +4,9 @@ function gameObject() {
             teamName: "Brooklyn Nets",
             colors: ["Black", "White"],
             players: {
-                "Alan Anderson": {
-                    "number": 0,
-                    "shoe": 16,
-                    "points": 22,
-                    "rebounds": 12,
-                    "assists": 12,
-                    "steals": 3,
-                    "blocks": 1,
-                    "slamDunks": 1
-                },
+                "Alan Anderson": { "number": 0, "shoe": 16, "points": 22,
+                    "rebounds": 12, "assists": 12, "steals": 3, "blocks": 1, 
+                    "slamDunks": 1 },
             	"Reggie Evans": {
                     "number": 30,
                     "shoe": 14,
@@ -116,7 +109,6 @@ function gameObject() {
     return someObject
 }
 
-
 function homeTeamName() {
     let object = gameObject()
     return object['home']['teamName']
@@ -161,7 +153,6 @@ function findPlayer(name, data = gameObject()) {
     // }
 }
 
-
 function numPointsScored(name) { // no wet code here.
     return findPlayer(name).points
 }
@@ -188,7 +179,7 @@ const playerNumbers = name => {
     const players = Object.keys(data[team].players)
     return players.map(player => data[team].players[player].number)
         /* ^^^ the variable declared        ^^^ the attribute of the object
-               on line 184.                     we spent all that time
+               on line 179.                     we spent all that time
                                                 building this morning, a.k.a.
                                                 that huge object at the top of
                                                 this file.
