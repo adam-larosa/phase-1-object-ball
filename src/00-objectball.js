@@ -147,7 +147,7 @@ function findPlayer(name, data = gameObject()) {
     // for (key in data) {
     //     for (player in data[key].players) {
     //         if (player === name) {
-    //             return data[key].players[player].points
+    //             return data[key].players[player]
     //         }
     //     }
     // }
