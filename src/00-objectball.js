@@ -143,11 +143,11 @@ function findPlayer(name, data = gameObject()) {
 
     // O(n)^2 solution
     // -----------------
-    // const data = gameObject()
-    // for (key in data) {
-    //     for (player in data[key].players) {
+    // const game = gameObject()
+    // for (team in game) {
+    //     for (player in game[team].players) {
     //         if (player === name) {
-    //             return data[key].players[player]
+    //             return game[team].players[name]
     //         }
     //     }
     // }
