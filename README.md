@@ -1,4 +1,4 @@
-# Bonus: JavaScript Object-ball
+# JavaScript Object-ball
 
 ## Learning Goals
 
