@@ -47,13 +47,7 @@ function gameObject() {
 }
 
 function locatePlayer(playerName) {
-    
-    /* O(1) refactor */
-    // const gameData = gameObject()
-    // return gameData.home.players[playerName] ? 
-    //     gameData.home.players[playerName] : 
-    //     gameData.away.players[playerName]
-    
+    const gameData = gameObject()
     for (let key in gameData) {
         const theTeam = gameData[key].players
         for (let player in theTeam) {
